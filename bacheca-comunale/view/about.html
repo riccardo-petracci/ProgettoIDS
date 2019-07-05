@@ -1,64 +1,76 @@
 <html>
+
+    <link rel="stylesheet" type="text/css" href="stili.css">
+
     <head>
         <title>About Page</title>
-        <body background="homepageBackground.jpeg">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#news">Se Possibile metterci le notizie del sindaco</a></li>
-                <li style="float:right"><a class="active" href="about.html">About</a></li>
-                <li style="float:right"><a href="login.html">Entra nella tua area riservata</a></li>
-            </ul>
+        <body>
+        <header>
+        <div id="testo-header" style="text-align: center">
+                <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#news">Se Possibile metterci le notizie del sindaco</a></li>
+                        <li style="float:right"><a class="active" href="about.html">About</a></li>
+                        <li style="float:right"><a href="login.html">Entra nella tua area riservata</a></li>
+                    </ul>
+        <h1>PROGETTO BACHECA COMUNALE</h1>
+        </div>
+        <div id="freccia-header">
+        <a href="#testo" style="text-align: center" class="ir"><br>VAI ALLA DESCRIZIONE</br>DEL PROGETTO</a>
+        </div>
+        </header>
+        <section id="testo">
+        <article>
+        
+        <h2>
+                Il progetto propone di realizzare un sistema software che permette di far 
+                interagire tra loro gli abitanti di un comune, permettendo a singoli cittadini, 
+                aziende e sindaci di poter scrivere post. Il sistema permette anche ai cittadini 
+                di segnalare eventuali problemi presenti nel territorio comunale (incidenti, 
+                allagamenti, strade dissestate e necessitarie di manutenzione) e consente al 
+                sindaco di poter scrivere delle comunicazioni per informare i cittadini su qualsiasi 
+                circostanza che richieda l'attenzione degli abitanti del luogo ( elezioni politiche, 
+                interruzione di servizi di pubblica utilit&aacute ecc.). Inoltre il sistema si occupa di 
+                gestire una bacheca che contiene offerte di lavoro, offerte promozionali/pubblicitarie 
+                inserite dalle varie aziende presenti nel territorio comunale ed eventi, creati dai 
+                singoli cittadini che dovranno essere supervisionati e approvati dal sindaco. Attraverso 
+                le offerte promozionali/pubblicitarie le aziende possono presentarsi ai cittadini, 
+                permettendo cos&igrave loro di poter far conoscere i propri prodotti e servizi e di 
+                pubblicizzarsi sul territorio e oltre. Le offerte di lavoro consentono alle aziende di 
+                offrire posti di lavoro su una bacheca accessibile a tutti gli abitanti, in modo tale da 
+                trovare figure professionali di interesse per l'azienda, richiedendo il curriculum ad ogni 
+                cittadino interessato ad un'offerta di lavoro per individuare il profilo richiesto. 
+                I cittadini possono cos&igrave fare domanda di lavoro e fissare colloqui con le aziende a loro 
+                interessati. Gli eventi proposti dal cittadino vengono presentati fin da subito al sindaco 
+                del comune, che pu&ograve decidere se approvarli e pubblicarli sulla bacheca comunale oppure rifiutarli 
+                e non pubblicarli, poich&egrave ritenuti inappropriati o irrealizzabili dal comune in quel dato momento. 
+                I cittadini possono informare gli organizzatori di eventi della loro presenza, in modo tale che 
+                questi ultimi sappiano come organizzarsi per svolgere eventi consoni al numero di partecipanti ed 
+                evitare sprechi di risorse.
+        </h2>
 
-            <div class="title" style="text-align: center">
-                <h1><br>Salve, </br> Benventi nella pagina delle informazioni </h1>
-            </div>
+        <div id="testo-header" style="text-align: left">
+            <h2>
+            <br>COMPONENTI</br>
+            <br>Riccardo Petracci</br>
+            <br>Luca Brandimarti</br>
+            <br>Andrea Di Ubaldo</br>
+            </h2>
+        </div>
 
-            <div class="membri" style="background-color: #FFF">
-                
-            
-            
-            </div>
+        </article>
+        </section>
 
-
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                $('#freccia-header a').bind('click',function(event){
+                    var $anchor = $(this);
+                        $('html, body').stop().animate({
+                            scrollTop: $($anchor.attr('href')).offset().top
+                            }, 1000);
+                        event.preventDefault();
+                });
+            });
+        </script>
         </body>
-    </head>
-</html>
-
-
-<style>
-        ul {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-          overflow: hidden;
-          background-color: #333;
-        }
-        
-        li {
-          float: left;
-          border-right:1px solid #bbb;
-        }
-        
-        li:last-child {
-          border-right: none;
-        }
-        
-        li a {
-          display: block;
-          color: white;
-          text-align: center;
-          padding: 14px 16px;
-          text-decoration: none;
-        }
-        
-        li a:hover:not(.active) {
-          background-color: #111;
-        }
-        
-        .active {
-          background-color: #4CAF50;
-        }
-        </style>
-    
-        
-        
