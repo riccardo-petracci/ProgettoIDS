@@ -276,10 +276,10 @@ hr {
 <body>
 
     <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="#news">Se Possibile metterci le notizie del sindaco</a></li>
-        <li style="float:right"><a href="about.html">About</a></li>
-        <li style="float:right"><a class="active" href="login.html">Entra nella tua area riservata</a></li>
+        <li style="float:right"><a href="/about">About</a></li>
+        <li style="float:right"><a class="active" href="/login">Entra nella tua area riservata</a></li>
     </ul>
 
 
@@ -292,7 +292,7 @@ hr {
 
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="/action_page.php">
+  <form class="modal-content animate" action="/logged" method="POST">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
     </div>
@@ -312,7 +312,7 @@ hr {
 
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <button type="button" class="psw">Forgot password?</button>
+      <a href="forgotpassword.html">Forgot password?</a>
     </div>
   </form>
 </div>
@@ -325,7 +325,7 @@ hr {
 
 <div id="id00" class="modal">
   <span onclick="document.getElementById('id00').style.display='none1'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content" action="/action_page.php">
+  <form class="modal-content" action="/signed" method="POST">
     <div class="container">
       <h1>Sign Up</h1>
       <p>Please fill in this form to create an account.</p>
