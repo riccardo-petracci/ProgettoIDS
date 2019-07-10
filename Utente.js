@@ -13,17 +13,6 @@ class Utente {
     this.password = password;
   }
 
-/*   setRuolo(r){
-    switch(r){
-        case 'azienda' :
-            return new Azienda.constructor(); 
-        case 'cittadino' :
-            return new Cittadino.constructor();
-        case 'ufficioSindacale' :
-            return new UfficioSindacale.constructor();
-    }
-  } */
-
 
 
   static incrementId(){

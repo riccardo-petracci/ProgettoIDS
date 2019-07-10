@@ -13,22 +13,18 @@ class Azienda {
         this.nomeAzienda=nomeAzienda;
     }
 
-    compilaOffertaLavoro(scriviQualcosa){
-        var txtInput = document.getElementById("txtInput"). value = scriviQualcosa ;
+    compilaOffertaLavoro(){
+        var txtInput = document.getElementById("txtInput"). value;
         txtInput.onkeypress = function(e) {
 	        if (e.target.value.length >= 200) e.preventDefault();
         }
     }
 
-    compilaAnnunciPromozione(scriviQualcosa){
-        var txtInput = document.getElementById("txtInput"). value = scriviQualcosa ;
+    compilaAnnunciPromozione(){
+        var txtInput = document.getElementById("txtInput"). value ;
         txtInput.onkeypress = function(e) {
 	        if (e.target.value.length >= 200) e.preventDefault();
         }
-    }
-
-    stampa(){
-        return "c";
     }
 
 }

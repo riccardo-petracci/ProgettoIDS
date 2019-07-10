@@ -13,20 +13,28 @@ const Ruolo = require('./Ruolo');
 
     }
 
-    compilaEvento(scriviQualcosa){
-        var txtInput = document.getElementById("txtInput"). value = scriviQualcosa ;
+    compilaEvento(){
+        var txtInput = document.getElementById("txtInput").value ;
         txtInput.onkeypress = function(e) {
-	        if (e.target.value.length >= 200) e.preventDefault();
+            if (e.target.value.length >= 200) e.preventDefault();
+            return txtInput;
         }
     }
 
-    compilaSegnalazione(scriviQualcosa){
-        var txtInput = document.getElementById("txtInput"). value = scriviQualcosa ;
+    compilaSegnalazione(){
+        var txtInput = document.getElementById("txtInput"). value ;
         txtInput.onkeypress = function(e) {
-	        if (e.target.value.length >= 200) e.preventDefault();
+            if (e.target.value.length >= 200) e.preventDefault();
+            return txtInput;
         }
     }
     
+    //permette di scegliere un file dalla memoria per rispondiOfferta
+    scegliFile(){
+        var realFileBtn = document.getElementById("realFile");
+        var customBtn = document.getElementById("customBtn");
+        customBtn.addEventListener("click", function(){ realFileBtn.click();})
+    }
 
 }
 
