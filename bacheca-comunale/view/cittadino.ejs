@@ -1,0 +1,116 @@
+<html>
+        <link rel="stylesheet" type="text/css" href="stili.css">
+    <head>
+        <title>Bacheca</title>
+        <body>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active">Homepage Cittadino</a></li>
+                <li style="float:right"><a href="about.html">About</a></li>
+                <li style="float:right"><a href="login.html">Entra nella tua area riservata</a></li>
+            </ul>
+
+<section>
+  <nav>
+    <ul>
+      <li><a href="bacheca.html">Bacheca Annunci</a></li>
+      <li><a button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"></button>Nuova Segnalazione</a></li>
+    </ul>
+
+    <div id="id01" class="modal">
+            <span onclick="document.getElementById('id01').style.display='none1'" class="close" title="Close Modal">&times;</span>
+            <form class="modal-content" action="/action_page.php">
+              <div class="container">
+                <h2 style="text-align: center">Salve, <br> scelga le opzioni per compilare la nuova segnalazione</h2>
+          
+                <div>
+                  <label for="Segnalazione"><b>Di che segnalazione si tratta?<b></label>
+                  <select name="tipoSegnalazione">
+                    <option value="--Select--">--Select--</option>
+                    <option value="Incidente">Incidente</option>
+                    <option value="Lavori">Lavori in corso</option>
+                    <option value="">Opzione 3</option>
+                    <option value="">Opzione 4</option>
+                  </select>
+                </div>
+                <div>
+                    <label for="presenza"><b>Era gi&agrave presente?<b></label>
+                    <select name="durata">
+                        <option value="--Select--">--Select--</option>
+                        <option value="adesso">&egrave accaduto ora</option>
+                        <option value="prima">era gi&agrave accaduto quando l'ho visto</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="provvedimenti"><b>Sono gi&agrave arrivati i soccorsi?<b></label>
+                    <select name="durata">
+                        <option value="--Select--">--Select--</option>
+                        <option value="no">si</option>
+                        <option value="si">no</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="provvedimenti" *ngIf=durata || ><b>Da quanto tempo sono arrivati i soccorsi?<b></label>
+                    <select name="soccorsi">
+                        <option value="--Select--">--Select--</option>
+                        <option value="tempo1">adesso</option>
+                        <option value="tempo2">non lo so</option>
+                        <option value="tempo3"> 5 minuti &lt</option>
+                        <option value="tempo4"> 5 minuti &lt &gt 10 minuti</option>
+                        <option value="tempo5"> &lt 30 minuti</option>
+                        <option value="tempo6"> 45 minuti &lt &gt 30 minuti</option>
+                        <option value="tempo7"> &gt 1 ora</option>
+                    </select>
+                </div>
+
+
+
+
+                <div class="clearfix">
+                  <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                  <button type="submit" class="forgotbtn">Pubblica</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+  </nav>
+  
+  <article>
+    <h1>London</h1>
+    <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+    <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+    <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+    <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p><p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+    <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p><p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+    <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+    <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+    <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+    <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+    <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p><p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+    <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p><p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+    <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+</article>
+</section>
+
+
+
+
+
+
+
+<script>
+
+        // Get the modal
+        var modal = document.getElementById('id01');
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        </script>
+        </body>
+    </head>
+</html>

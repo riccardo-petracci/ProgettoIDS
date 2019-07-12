@@ -1,0 +1,30 @@
+<!-- questa pagina probabilmente non servira perché tutto verrà implementato in un'unica pagina -->
+
+<form>
+        <table id="oggetto" border="0" cellspacing="2" cellpadding="2">
+        <tr>
+        <td>Nome:</td>
+        <td><input type="text" size="31" name="nome" maxlength="30"></td>
+        </tr>
+        <tr>
+        <td>Cognome:</td>
+        <td><input type="text" size="31" name="nome" maxlength="30"></td>
+        </tr>
+        <tr>
+        <td>Email:</td>
+        <td><input type="text" size="31" name="email" maxlength="30"></td>
+        </tr>
+        <tr>
+            <div class="card-title">
+               <h3>Inserisca il suo curriculum</h3>
+                        <div id="curriculum"></div>
+                        
+                    </div>
+                    <div class="card-title">
+                        <input #PdfUpload type="file" accept=".pdf" (change)="getLoadedFile($event.target.files)" class=""/>
+                    </div>
+            </tr>
+        
+        
+        </table>
+        </form>
