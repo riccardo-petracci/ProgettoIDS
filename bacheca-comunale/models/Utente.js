@@ -29,14 +29,3 @@ class Utente {
 module.exports = Utente;
 
 
-//var u = new Cittadino( new Utente("c", "c", "c"));
-//var u3 = new Azienda( new Utente("c", "c", "c"), "nomeAzienda");
-//var u2 = new UfficioSindacale( new Utente("c", "c", "c"));
-
-
-
-
-//console.log(u.id);
-/* console.log(u3.id);
-console.log(u3.nomeAzienda); */
-//console.log(u2.id);

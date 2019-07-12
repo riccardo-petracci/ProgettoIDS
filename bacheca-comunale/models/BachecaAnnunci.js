@@ -10,12 +10,6 @@ var BachecaAnnunci = {
     OfferteLavoro : ListaOfferteLavoro = [],
     AnnunciPromozione : ListaAnnunciPromozione = [],
 
-
-
-
-
-    
-
     AggiungiEvento(Evento){
         ListaEventi.push(Evento);
     },
@@ -42,6 +36,3 @@ var BachecaAnnunci = {
 
 
 };
-var u = new Utente("carlo", "cracco", "pass");
-var citt = new Cittadino(u);
-BachecaAnnunci.AggiungiEvento(new Evento( citt , "10/10/10", "CuliInAria"));

@@ -31,6 +31,3 @@ class Azienda {
 module.exports = Azienda;
 
 
-//var u1 = new Azienda( new Utente("c", "c", "c"), "nomeAzienda");
-
-//console.log(u1.id);
