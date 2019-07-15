@@ -1,19 +1,19 @@
 const Cittadino = require('./Cittadino');
 
-class Segnalazione{
-    NomeCittadinoCreatore;
-    CognomeCittadinoCreatore;
-    SegnalazioneId;
-    DescrizioneSegnalazione;
-    DataSegnalazione;
-
-
-    constructor(Cittadino, DataSegnalazione){
+class segnalazione{
+    
+    constructor(Cittadino,tipoSegnalazione,durata,soccorsi,soccorsiGiunti,DataSegnalazione){
+        this.SegnalazioneId=segnalazione.incrementId();
         this.NomeCittadinoCreatore = Cittadino.nome;
         this.CognomeCittadinoCreatore = Cittadino.cognome;
-        this.SegnalazioneId= Segnalazione.incrementId();
-        this.DescrizioneSegnalazione = Cittadino.compilaSegnalazione();
         this.DataSegnalazione= DataSegnalazione;
+        this.tipoSegnalazione=tipoSegnalazione
+        this.eraGiaPresente=durata
+        this.sonoGiaArrivatiIsoccorsi=soccorsi
+        this.daQuantoSonoArrivatiIsoccorsi=soccorsiGiunti
+        
+        
+       
     }
 
 
@@ -28,3 +28,4 @@ class Segnalazione{
     
 
 }
+module.exports = segnalazione;

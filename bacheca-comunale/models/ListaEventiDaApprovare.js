@@ -1,29 +1,33 @@
 const Evento = require('./Evento');
 const Cittadino = require('./Cittadino');
 
-ListaEventiDaApprovare = [];
+
+
+var listaEventiDaApprovare = {
+
+"lista":ListaEventiDaApprovare = [],
 
 
 
-    function isEmpty(ListaEventiDaApprovare){
+    isEmpty(ListaEventiDaApprovare){
         if(ListaEventiDaApprovare.length == 0){
             return true;
         }else{ 
             return false;
              }
-    }
+    },
 
 
-    function getEvent(eventoId, ListaEventiDaApprovare){
+    getEvent(eventoId, ListaEventiDaApprovare){
         for (var i=0; i < ListaEventiDaApprovare.length; i++) {
             if (ListaEventiDaApprovare[i].eventoId === eventoId) {
                 return ListaEventiDaApprovare[i];
             }
         }
-    }
+    },
 
 
-    function deleteEvent(eventoId, ListaEventiDaApprovare){
+    deleteEvent(eventoId, ListaEventiDaApprovare){
         for (var i=0; i < ListaEventiDaApprovare.length; i++) {
             if (ListaEventiDaApprovare[i].eventoId === eventoId) {
                 ListaEventiDaApprovare.splice(i);
@@ -34,6 +38,6 @@ ListaEventiDaApprovare = [];
 
 
 
+}
 
-
-module.exports.ListaEventiDaApprovare = this.ListaEventiDaApprovare; 
+module.exports = listaEventiDaApprovare; 

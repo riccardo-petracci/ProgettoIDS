@@ -1,4 +1,4 @@
-const listaUtenti = require('../models/listaUtenti')
+const DB = require('../models/listaUtenti')
 const Utente = require('../models/Utente');
 const Cittadino = require('../models/Cittadino');
 const Azienda = require('../models/Azienda');
@@ -10,9 +10,9 @@ var auth = {
     
     checkCredential(username , password)
     {
-        for(var i =0;i<listaUtenti.length;i++)
+        for(var i =0;i<DB.listaUtenti.length;i++)
         {
-            if(listaUtenti[i].nome == username && listaUtenti[i].password == password ) 
+            if(DB.listaUtenti[i].nome == username && DB.listaUtenti[i].password == password ) 
             {
                 var credential = 
                 {

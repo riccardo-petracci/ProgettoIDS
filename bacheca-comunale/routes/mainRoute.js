@@ -43,12 +43,11 @@ route.post('/logged',(req,res) => {
     if ( credential === undefined)
     {
        res.writeHead(401,{ 'Content-Type': 'text/plain' })
-       
+       console.log('wrong user')
     }else{
-        var utente = DB.filter(function(DB){if(DB.nome === req.body.uname && DB.password === req.body.psw) {return DB}})
-        req.session.authUser=utente
+        var userAuth = DB.getUser(credential.username,credential.Password)
+        req.session.user=userAuth
         res.redirect('/cittadino')
-        
     }
     
 

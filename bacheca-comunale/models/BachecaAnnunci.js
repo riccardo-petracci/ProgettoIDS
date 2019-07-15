@@ -1,11 +1,11 @@
 
 var BachecaAnnunci = {
 
-    Eventi : ListaEventi = [],
-    Segnalazioni : ListaSegnalazioni = [],
-    Comunicazini : ListaComunicazioni = [],
-    OfferteLavoro : ListaOfferteLavoro = [],
-    AnnunciPromozione : ListaAnnunciPromozione = [],
+    "Eventi" : ListaEventi = [],
+    "Segnalazioni" : ListaSegnalazioni = [],
+    "Comunicazini" : ListaComunicazioni = [],
+    "OfferteLavoro" : ListaOfferteLavoro = [],
+    "AnnunciPromozione" : ListaAnnunciPromozione = [],
 
     AggiungiEvento(Evento){
         ListaEventi.push(Evento);

@@ -1,23 +1,19 @@
-const Cittadino = require('./Cittadino');
+
 
 class Evento{
 
-/*     nomeOrganizzatore;
-    cognomeOrganizzatore;
-    eventoId;
-    dataCreazioneEvento;
-    descrizioneEvento;
-    titoloEvento; 
-    flagApprovazione = false; */
 
-    constructor(Cittadino, dataCreazione, titoloEvento){
+
+    constructor(Cittadino, dataEvento, titoloEvento,descrizioneEvento,mailCreatoreEvento,dataCreazione){
         this.Cittadino=Cittadino;
         this.nomeOrganizzatore = Cittadino.nome;
         this.cognomeOrganizzatore = Cittadino.cognome;
         this.eventoId = Evento.incrementId();
         this.dataCreazione = dataCreazione;
-        //this.descrizioneEvento = Cittadino.compilaEvento();
+        this.dataEvento = dataEvento;
+        this.descrizioneEvento = descrizioneEvento
         this.titoloEvento = titoloEvento;
+        this.mailCreatoreEvento
     }
 
     static incrementId(){
