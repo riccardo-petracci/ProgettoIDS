@@ -1,6 +1,3 @@
-const Utente = require('./Utente');
-const Evento = require('./Evento');
-const Cittadino = require('./Cittadino');
 
 var BachecaAnnunci = {
 
