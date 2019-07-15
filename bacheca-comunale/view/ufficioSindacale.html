@@ -7,8 +7,113 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a class="active" style="text-align: center">Homepage Ufficio Sindacale</a></li>
                 <li style="float:right"><a href="about.html">About</a></li>
-                <li style="float:right"><a href="login.html">Entra nella tua area riservata</a></li>
             </ul>
+<section>
+  <nav>
+    <ul>
+      <li><a href="bacheca.html">Bacheca Annunci</a></li>
+      <li><a button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"></button>Nuova Comunicazione</a></li>
+      <li><a button href="approvazioneEventi.html"></button>Approvazione Eventi</a></li>
+    </ul>
+    <div id="id01" class="modal">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <form class="modal-content" action="/action_page.php">
+                      <div class="container">
+                        <h2 style="text-align: center">Salve,<br> compili il form per una nuova comunicazione</h2>
+                        
+                        <form>
+                                <table id="oggetto" border="0" cellspacing="2" cellpadding="2">
+                                <tr>
+                                <td>Oggetto Comunicazione:</td>
+                                <td><input type="text" size="31" name="nome" maxlength="30"></td>
+                                </tr>
+                                <tr>
+                                </tr>
+                                <tr>
+                                <tr> 
+                                <td> Grado importanza </td>
+                                <td> <select name="importanza"> 
+                                <option value"Selezione">Selezione</option>
+                                <option value="molto grave">Allerta!</option>
+                                <option value="grave"> Alto </option>
+                                <option value="promozioni">Medio</option>
+                                <option value="nullo">Basso</option>
+                                </select> </td>
+                                </tr>
+                                <td>Messaggio:</td>
+                                <td><textarea rows="7" cols="24" name="messaggio"></textarea></td>
+                                </tr>
+                                <tr>
+                                <td></td>
+                                <td> <input type="reset" value="Reset">
+                                </td>
+                                </tr>
+                                </table>
+                                </form>
+
+                        
+                        <div class="clearfix">
+                          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                          <button type="submit" onclick="pubblicaComunicazione()" class="forgotbtn">Pubblica</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+
+
+    </nav>
+    </section>
+
+
+    <div class="container">
+            <div class="title" style="text-align: center">
+              <div class="main-content">
+                  <div class="container-fluid">
+                    <div class="card mb-3">
+                      <div class="card-body">
+                       <div class="card">
+                       <div class="card-body table-responsive">
+                           <table class="table table-hover">
+                               <tbody>
+                                 <!-- comunicazioni del sindaco -->
+                                  <tr *ngFor="let segnalazioni?.results">
+                                      <td>
+                                          <h5>{{comunicazione?.tipoSegnalazione}}</h5>
+                                          <p>Segnalazione di<b>{{segnalazione?.nome_cittadino}}</b><b>{{segnalazione?.presenza}}</b><b>{{segnalazione?.provvedimenti.durata}}</b><b>{{segnalazione?.provvedimenti.soccorsi}}</b></p>
+                                      </td>
+                                      </tr>
+                                 <!-- segnalazioni cittadini -->
+                                   <tr *ngFor="let segnalazioni?.results">
+                                   <td>
+                                       <h5>{{segnalazione?.tipoSegnalazione}}</h5>
+                                       <p>Segnalazione di<b>{{segnalazione?.nome_cittadino}}</b><b>{{segnalazione?.presenza}}</b><b>{{segnalazione?.provvedimenti.durata}}</b><b>{{segnalazione?.provvedimenti.soccorsi}}</b></p>
+                                   </td>
+                                   </tr>
+                               </tbody>
+                           </table>
+                       </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <script>
+
+        // Get the modal
+        var modal = document.getElementById('id01');
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        </script>
         </body>
     </head>
 </html>

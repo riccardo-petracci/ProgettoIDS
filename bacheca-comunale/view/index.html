@@ -10,7 +10,6 @@
     
     <ul>
       <li><a class="active" href="index.html">Home</a></li>
-      <li><a href="#news">Se Possibile metterci le notizie del sindaco</a></li>
       <li style="float:right"><a href="about.html">About</a></li>
       <li style="float:right"><a href="login.html">Entra nella tua area riservata</a></li>
     </ul>   
@@ -18,6 +17,36 @@
     <div class="container">
       <div class="title" style="text-align: center">
         <h1>Benvenuti nella Bacheca Comunale</h1> <img src="homepageBackground.jpeg">
+        <div class="main-content">
+            <div class="container-fluid">
+              <div class="card mb-3">
+                <div class="card-body">
+                 <div class="card">
+                 <div class="card-body table-responsive">
+                     <table class="table table-hover">
+                         <tbody>
+                           <!-- comunicazioni del sindaco -->
+                            <tr *ngFor="let segnalazioni?.results">
+                                <td>
+                                    <h5>{{comunicazione?.tipoSegnalazione}}</h5>
+                                    <p>Segnalazione di<b>{{segnalazione?.nome_cittadino}}</b><b>{{segnalazione?.presenza}}</b><b>{{segnalazione?.provvedimenti.durata}}</b><b>{{segnalazione?.provvedimenti.soccorsi}}</b></p>
+                                </td>
+                                </tr>
+                           <!-- segnalazioni cittadini -->
+                             <tr *ngFor="let segnalazioni?.results">
+                             <td>
+                                 <h5>{{segnalazione?.tipoSegnalazione}}</h5>
+                                 <p>Segnalazione di<b>{{segnalazione?.nome_cittadino}}</b><b>{{segnalazione?.presenza}}</b><b>{{segnalazione?.provvedimenti.durata}}</b><b>{{segnalazione?.provvedimenti.soccorsi}}</b></p>
+                             </td>
+                             </tr>
+                         </tbody>
+                     </table>
+                 </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 

@@ -1,4 +1,26 @@
-<form>
+<html>
+<link rel="stylesheet" type="text/css" href="stili.css">
+   <head>
+           <title>Gestione Offerte di Lavoro</title>
+      <body>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="azienda.html">Homepage Azienda</a></li>
+            <li style="float:right"><a href="about.html">About</a></li>
+            <li><a href="bacheca.html">Bacheca Annunci</a></li>
+            <li><a class="active">Sezione Offerte Lavoro</a></li>
+        </ul>
+
+        
+
+<button onclick="document.getElementById('id00').style.display='block'" style="width:auto;">Nuova Offerta di Lavoro</button>
+
+<div id="id00" class="modal">
+  <span onclick="document.getElementById('id00').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content" action="/action_page.php">
+    <div class="container">
+      <form>
+        <h2>Compila una nuova offerta di lavoro</h2>
         <table id="oggetto" border="0" cellspacing="2" cellpadding="2">
         <tr>
         <td>Nome Azienda:</td>
@@ -38,3 +60,69 @@
         </tr>
         </table>
         </form>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id00').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Crea Offerta di Lavoro</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="card mb-3">
+        <div class="card-body">
+         <div class="card">
+         <div class="card-header card-header-primary">
+             <h3 class="card-title " *ngIf="models?.results.length !== 0">Lista Offerte di lavoro pubblicate</h3>
+             <h3 class="card-title " *ngIf="models?.results.length === 0">Non ci sono offerte di lavoro pubblicate. Crearne una nuova.</h3>
+         </div>
+         <div class="card-body table-responsive">
+             <table class="table table-hover">
+                 <tbody>
+                     <tr *ngFor="let model of models?.results">
+                     <td>
+                         <h5>{{offertaLavoro?.lavoratoreRicercato}}</h5>
+                         <p>Uploaded on <b>{{offertaLavoro?.upload_date}}</b> con risposte <b>{{offertaLavoro.counterRispostaOffertaLavoro}}</b></p>
+                     </td>
+                     <td>
+                        <a class="nav-link active" href="['offertaLavoro/', offertaLavoro.offertaLavoro_id]">Dettagli</a>
+                         <!-- <a class="nav-link" [routerLink]="['offertaLavoro/', offertaLavoro.offertaLavoro_id]" routerLinkActive="active" matTooltip="Validate Model">
+                             <mat-icon>forward</mat-icon> -->
+                         </a>
+                     </td>
+                     </tr>
+                 </tbody>
+             </table>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+
+// Get the modal
+var modal1 = document.getElementById('id00');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+            if (event.target == modal1) {
+                modal1.style.display = "none";
+            }
+        }
+
+//se vogliamo far aprire in automatico la creazione offerta di lavoro in casi non ci siano offerte pubblicate
+wiondow.onload=function(){
+        
+}        
+</script>       
+      </body>
+   </head>
+</html>

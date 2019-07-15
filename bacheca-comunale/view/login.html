@@ -8,12 +8,9 @@
 
     <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="#news">Se Possibile metterci le notizie del sindaco</a></li>
         <li style="float:right"><a href="about.html">About</a></li>
         <li style="float:right"><a class="active" href="login.html">Entra nella tua area riservata</a></li>
     </ul>
-
-
 
     <!-- accesso modale -->
 
@@ -108,10 +105,14 @@ var modal1 = document.getElementById('id00');
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
-    }else if (event.target == modal1) {
-        modal1.style.display = "none1";
     }
 }
+
+window.onclick = function(event) {
+            if (event.target == modal1) {
+                modal1.style.display = "none";
+            }
+        }
 </script>
 </body>
 </html>

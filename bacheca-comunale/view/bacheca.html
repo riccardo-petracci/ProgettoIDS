@@ -5,37 +5,95 @@
 <body>
 
 <ul>
-  <li><a class="active" href="#home">Home</a></li>
-  <li><a href="#news">News</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li><a href="#about">About</a></li>
+  <li><a class="active">Bacheca Annunci</a></li>
+  <li *ngIf="isCittadino"><a href="cittadino.html">Home Cittadino</a></li>
+  <li *ngIf="isAzienda"><a href="azienda.html">Home Azienda</a></li>
+  <li *ngIf="isUfficioSindacale"><a href="ufficioSindacale.html">Home Ufficio Sindacale</a></li>
 </ul>
 
 <div style="padding:20px;margin-top:30px;background-color:#1abc9c;height:1500px;">
-  <h1>Fixed Top Navigation Bar</h1>
-  <h2>Scroll this page to see the effect</h2>
-  <h2>The navigation bar will stay at the top of the page while scrolling</h2>
-
-  <p>Some text some text some text some text..</p>
-  <p>Some text some text some text some text..</p>
-  <p>Some text some text some text some text..</p>
-  <p>Some text some text some text some text..</p>
-  <p>Some text some text some text some text..</p>
-  <p>Some text some text some text some text..</p>
-  <p>Some text some text some text some text..</p>
-  <p>Some text some text some text some text..</p>
-  <p>Some text some text some text some text..</p>
-  <p>Some text some text some text some text..</p>
-  <p>Some text some text some text some text..</p>
-  <p>Some text some text some text some text..</p>
-  <p>Some text some text some text some text..</p>
-  <p>Some text some text some text some text..</p>
-  <p>Some text some text some text some text..</p>
-  <p>Some text some text some text some text..</p>
-  <p>Some text some text some text some text..</p>
-  <p>Some text some text some text some text..</p>
-  <p>Some text some text some text some text..</p>
-  <p>Some text some text some text some text..</p>
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6">
+          <div class="card">
+              <div class="card-header card-header-info">
+                  <h4 class="card-title">Offerte di Lavoro<a href="listaOfferteLavoro.html">Vedi tutte le offerte di lavoro</a></h4>
+              </div>
+                <div class="card-body "> <!--table-responsive / scroll-->
+                  <table class="table table-hover">
+                      <thead class="text-info">
+                          <th>Nome Azienda</th>
+                          <th>Lavoratore Ricercato</th>
+                          <th>Periodo</th>
+                          <th>Messaggio</th>
+                      </thead>
+                      <tbody>
+                          <tr *ngFor="let model of mostDownloadedModels?.results">
+                              <td *ngIf="isAdmin">{{model.model_id}}</td>
+                              <td style="max-width:250px; white-space:nowrap;overflow-x: scroll;" >{{model.name}}</td>                                                                     
+                              <td >{{model.number_of_downloads}}</td>
+                              <td>
+                                    <a class="nav-link" [routerLink]="['modelDetails/', model.model_id]" routerLinkActive="active" matTooltip="Details">
+                                      <mat-icon>forward</mat-icon>
+                                </a>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="card" >
+                <div class="card-header card-header-danger">
+                    <h4 class="card-title">Annunci Promozioni <a href="listaPromozioni.html">Vedi tutte le Promozioni</a></h4>
+                </div>
+                <div class="card-body "> <!-- table-responsive / scroll -->
+                    <table class="table table-hover">
+                        <thead class="text-danger">
+                            <th>Nome Azienda</th>
+                            <th>Nome Promozione</th>
+                            <th>Messaggio Azienda</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let model of latestModels?.results">
+                                <!-- Aggiunta style per permettere lo scroll, per riportare tutto allo stato originale eliminare lo style -->
+                                <td *ngIf="isAdmin" style="max-width:100px;">{{model.model_id}}</td> 
+                                <td style="max-width:170px; white-space:nowrap;overflow-x: scroll" >{{model.name}}</td>
+                                <td style="max-width: 100px;" >{{model.upload_date}}</td> <!-- con max-width la data va su due righe senza rimane su una ma tutto più compatto-->
+                                  </a>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <div class="card">
+              <div class="card-header card-header-info">
+                  <h4 class="card-title">Eventi<a href="listaEventi.html">Vedi tutti gli eventi</a></h4>
+              </div>
+                <div class="card-body "> <!--table-responsive / scroll-->
+                  <table class="table table-hover">
+                      <thead class="text-info">
+                          <th>Nome Evento</th>
+                          <th>Numero Partecipanti</th>
+                          <th>Dettagli</th>
+                      </thead>
+                      <tbody>
+                          <tr *ngFor="let model of mostDownloadedModels?.results">
+                              <td *ngIf="isAdmin">{{model.model_id}}</td>
+                              <td style="max-width:250px; white-space:nowrap;overflow-x: scroll;" >{{model.name}}</td>                                                                     
+                              <td >{{model.number_of_downloads}}</td>
+                              <td>
+                                    <a class="nav-link" [routerLink]="['modelDetails/', model.model_id]" routerLinkActive="active" matTooltip="Details">
+                                      <mat-icon>forward</mat-icon>
+                                </a>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+    </div>
 </div>
 
 </body>
