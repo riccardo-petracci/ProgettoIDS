@@ -1,17 +1,23 @@
-const Utente = require('./utente')
-var listaUtenti = new Array();
-//const ut = new Utente('stefano','telamonti','1234','cittadino')
-function nuovoUtente(nome,cognome,password,ruolo) {listaUtenti.push(new Utente(nome,cognome,password,ruolo))};
-function cercaUtente(nome,cognome) 
+const Utente = require('./Utente');
+const Cittadino = require('./Cittadino');
+const Azienda = require('./Azienda');
+const UfficioSindacale = require('./UfficioSindacale');
+
+
+
+var db = 
 {
-    
-    for (var i = 0; i < listaUtenti.length; i++) {
-       if( listaUtenti[i].getNome() == nome  && listaUtenti[i].getCognome() == cognome)
-       {
-           return(listaUtenti[i])
-       }
-      }
-      
+    "listaUtenti":listaUtenti = [erik = new Cittadino(new Utente('erik','romagnoli','123')),
+    flavio = (new Cittadino(new Utente('flavio','deangelis','11'))),
+     germano = (new Azienda(new Utente('germano','conti','155'),'geco Corp'))],
+    getUser(Nome,password)
+    {
+         for (i = 0; i < listaUtenti.length; i++) 
+        {
+         if(listaUtenti[i].nome === Nome && listaUtenti[i].password === password ) return listaUtenti[i]
+        } 
+     }
+        
+}
 
-};
-
+module.exports=db
