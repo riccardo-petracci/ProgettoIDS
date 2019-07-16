@@ -10,6 +10,7 @@ class Azienda {
         this.cognome=Utente.cognome;
         this.password= Utente.password;
         this.nomeAzienda=nomeAzienda;
+        this.ruolo = 'azienda'
     }
 
     compilaOffertaLavoro(){
@@ -19,12 +20,7 @@ class Azienda {
         }
     }
 
-    compilaAnnunciPromozione(){
-        var txtInput = document.getElementById("txtInput"). value ;
-        txtInput.onkeypress = function(e) {
-	        if (e.target.value.length >= 200) e.preventDefault();
-        }
-    }
+    
 
 }
 

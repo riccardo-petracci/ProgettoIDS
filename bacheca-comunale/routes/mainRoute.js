@@ -9,11 +9,13 @@ const session = require('express-session')
 const DB = require('../models/listaUtenti')
 const auth = require('../controller/auth')
 const cittadino = require('./cittadinoRoute')
+const azienda = require('./aziendsRoute')
 
 
 route.use(cookieParser())
 route.use(bodyParser.urlencoded({extended:true}))
 route.use(cittadino)
+route.use(azienda)
 
 route.use(session({
     
@@ -47,7 +49,20 @@ route.post('/logged',(req,res) => {
     }else{
         var userAuth = DB.getUser(credential.username,credential.Password)
         req.session.user=userAuth
-        res.redirect('/cittadino')
+
+        switch(userAuth.ruolo) {
+            case 'ufficioSindacale':
+                    res.redirect('/ufficiosindacale')
+              break;
+            case 'cittadino':
+                res.redirect('/cittadino')
+              break;
+              case 'azienda':
+                 
+                    res.redirect('/azienda')
+             
+          }
+       
     }
     
 

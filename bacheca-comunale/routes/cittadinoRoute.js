@@ -33,6 +33,14 @@ route.get('/cittadino',function(req,res){
 
 })
 
+
+// route.get('/cittadino/bacheca',function(req,res){
+    
+//     res.render(path.resolve('./view')+'/bacheca.ejs')
+    
+
+// })
+
 route.post('/cittadino/segnalazzione',(req,res) =>
 {
     var tipoSegnalazione = req.body.tipoSegnalazione

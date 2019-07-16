@@ -1,18 +1,16 @@
 const Azienda = require('./Azienda');
 
 class AnnunciPromozione{
-    AziendaCreatrice;
-    AnnuncioId;
-    descrizioneAnnuncio;
-    dataAnnuncio;
-
+   
     
-    constructor(Azienda, DataSegnalazione){
+    constructor(Azienda, DataSegnalazione,descrizione,mail,tipoServizio){
         this.Azienda = Azienda;
         this.AziendaCreatrice = Azienda.nomeAzienda;
         this.SegnalazioneId = AnnunciPromozione.incrementId();
-        this.DescrizioneSegnalazione = Cittadino.compilaSegnalazione();
+        this.DescrizioneSegnalazione = descrizione
         this.DataSegnalazione = DataSegnalazione;
+        this.mail=mail
+        this.tipoServizio=tipoServizio
     }
 
     static incrementId(){
@@ -21,3 +19,5 @@ class AnnunciPromozione{
         return this.latestId;
       }
 }
+
+module.exports = AnnunciPromozione

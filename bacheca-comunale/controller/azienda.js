@@ -1,33 +1,33 @@
-class gestoreAzienda {
-  
-    
-    constructor(jobList,OffersForm,gestoreOfferte,bahecaAnnunci) 
-    { 
-    this.jobList = jobList
-    this.OffersForm = OffersForm
-    this.gestoreOfferte = gestoreOfferte
-    this.bahecaAnnunci = bahecaAnnunci
-    }
+const annuncio = require('../models/AnnunciPromozione')
 
+var gestoreAzienda = {
+
+  "date": date = new Date(),
+
+  compilaAnnunciPromozione(azienda,mail,tipoServizio,descrizione)
+  {
+    var ann = new annuncio(azienda,date.toUTCString(),descrizione,mail,tipoServizio)
+    return ann
+  },
     PromotionForm() 
     {
 
-    }
+    },
 
     checkList()
     {
 
-    }
+    },
 
     checkAnswersOffer()
     {
 
-    }
+    },
 
     pubblishNotice()
     {
 
-    }
+    },
 
     createJob()
     {
@@ -59,3 +59,5 @@ class gestoreAzienda {
 
     }
   }
+
+  module.exports.gestoreAzienda = gestoreAzienda

@@ -7,7 +7,9 @@ const UfficioSindacale = require('./UfficioSindacale');
 
 var db = 
 {
-    "listaUtenti":listaUtenti = [erik = new Cittadino(new Utente('erik','romagnoli','123')),flavio = (new Cittadino(new Utente('flavio','deangelis','11')))],
+    "listaUtenti":listaUtenti = [erik = new Cittadino(new Utente('erik','romagnoli','123')),
+    flavio = (new Cittadino(new Utente('flavio','deangelis','11'))),
+     germano = (new Azienda(new Utente('germano','conti','155'),'geco Corp'))],
     getUser(Nome,password)
     {
          for (i = 0; i < listaUtenti.length; i++) 

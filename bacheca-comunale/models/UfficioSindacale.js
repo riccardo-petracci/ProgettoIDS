@@ -10,6 +10,7 @@ class UfficioSindacale  {
         this.nome = Utente.nome;
         this.cognome = Utente.cognome;
         this.password = Utente.password; 
+        this.ruolo = 'ufficioSindacale'
     }
 
     compilaComunicazione(){

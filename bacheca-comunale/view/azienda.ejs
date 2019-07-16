@@ -23,15 +23,13 @@
         
             <div id="id01" class="modal">
                     <span onclick="document.getElementById('id01').style.display='none1'" class="close" title="Close Modal">&times;</span>
-                    <form class="modal-content" action="/action_page.php">
+                    <form class="modal-content" action="/azienda/promozione"  method="POST">
                       <div class="container">
-                        <h2 style="text-align: center">Salve,<br> compili il form per una nuova promozione</h2>
+                        <h2 style="text-align: center">Salve <%=utente%>,<br> compili il form per una nuova promozione</h2>
                         
                         <form>
                                 <table id="oggetto" border="0" cellspacing="2" cellpadding="2">
                                 <tr>
-                                <td>Nome Azienda:</td>
-                                <td><input type="text" size="31" name="nome" maxlength="30"></td>
                                 </tr>
                                 <tr>
                                 <td>Email:</td>
@@ -40,7 +38,7 @@
                                 <tr>
                                 <tr> 
                                 <td> Oggetto </td>
-                                <td> <select name="a"> 
+                                <td> <select name="tipoServizio"> 
                                 <option value"Selezione">Selezione</option>
                                 <option value="offerte"> Offerte </option>
                                 <option value="promozioni">Promozioni</option>
