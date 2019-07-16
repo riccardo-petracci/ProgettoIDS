@@ -1,4 +1,4 @@
-1°ITERAZIONE 3/4/19 - 3/5/19
+1° ITERAZIONE 3/4/19 - 3/5/19
 	-IDENTIFICAZIONE ATTORI
 		-UtenteNonAutenticato
 		-Utente
@@ -22,7 +22,7 @@
 
 
 
-2°ITERAZIONE 5/5/19 - 24/5/19
+2° ITERAZIONE 5/5/19 - 24/5/19
 	-IDENTIFICAZIONE ATTORI
 		-Cittadino
 		-Sindaco
@@ -50,7 +50,7 @@
 
 
 
-3°ITERAZIONE 28/5/19 - 18/6/19
+3° ITERAZIONE 28/5/19 - 18/6/19
 	-IDENTIFICAZIONE ATTORI
 		-Azienda
 		-SuperUser (Amministratore e Moderatore)
