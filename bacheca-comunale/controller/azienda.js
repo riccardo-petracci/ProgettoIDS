@@ -1,5 +1,5 @@
 const annuncio = require('../models/AnnunciPromozione')
-
+const OffertaLavoro= require('../models/OfferteLavoro')
 var gestoreAzienda = {
 
   "date": date = new Date(),
@@ -27,37 +27,30 @@ var gestoreAzienda = {
     pubblishNotice()
     {
 
-    },
-
-    createJob()
-    {
-        gestoreOfferte.createJobOffer()
-        gestoreOfferte.pubblishJobOffers(this.bahecaAnnunci)
     }
   }
 
-  class gestoreOfferte {
+var gestoreOfferte=  {
   
     
-    constructor() 
-    { 
-
-    }
+  
 
     pubblishJobOffers(bahecaAnnunci) 
     {
 
-    }
+    },
 
-    createJobOffer(jobOffer)
+    createJobOffer( AziendaOfferente,descrizioneOfferta,mail,tipoLavoratore)
     {
-
-    }
+      var jobOffer = new OffertaLavoro(AziendaOfferente,date.toUTCString(),descrizioneOfferta,mail,tipoLavoratore);
+      return jobOffer;
+    },
 
     getCurriculum()
     {
 
-    }
+    },
   }
 
   module.exports.gestoreAzienda = gestoreAzienda
+  module.exports.gestoreOfferte = gestoreOfferte

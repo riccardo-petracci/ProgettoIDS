@@ -1,18 +1,16 @@
 class Comunicazione{
-    NomeAssistente;
-    CognomeAssistente
-    ComunicazioneId;
-    DescrizioneComunicazione;
-    DataComunicazione;
 
     
-    constructor(UfficioSindacale, DataComunicazione){
+    constructor(UfficioSindacale, DataComunicazione,oggetto,importanza,messagio){
         this.UfficioSindacale = UfficioSindacale;
         this.NomeAssistente = UfficioSindacale.nome;
         this.CognomeAssistente = UfficioSindacale.cognome;
         this.ComunicazioneId = Comunicazione.incrementId();
-        this.DescrizioneComunicazione = UfficioSindacale.compilaComunicazione();
         this.DataComunicazione = DataComunicazione;
+        this.importanza=importanza
+        this.oggetto=oggetto
+        this.DescrizioneComunicazione = messagio
+        
     }
 
     static incrementId(){
@@ -21,3 +19,5 @@ class Comunicazione{
         return this.latestId;
       }
 }
+
+module.exports = Comunicazione

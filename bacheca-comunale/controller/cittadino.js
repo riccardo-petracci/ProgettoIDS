@@ -25,9 +25,9 @@ var gestoreCittadino= {
         
     },
 
-    newEvent(cittadino,mail,nomeEvento,dataEvento,descrizone)
+    newEvent(cittadino,mail,nomeEvento,dataEvento,descrizione)
     {
-        var event = new evento(cittadino,dataEvento,nomeEvento,descrizone,mail,date.toUTCString())
+        var event = new evento(cittadino,dataEvento,nomeEvento,descrizione,mail,date.toUTCString())
         return event
     },
 

@@ -2,7 +2,6 @@
 var BachecaAnnunci = {
 
     "Eventi" : ListaEventi = [],
-    "Segnalazioni" : ListaSegnalazioni = [],
     "Comunicazini" : ListaComunicazioni = [],
     "OfferteLavoro" : ListaOfferteLavoro = [],
     "AnnunciPromozione" : ListaAnnunciPromozione = [],
@@ -12,10 +11,6 @@ var BachecaAnnunci = {
     },
 
     
-    AggiungiSegnalazione(Segnalazione){
-        ListaSegnalazioni.push(Segnalazione);
-    },
-
 
     AggiungiComunicazione(Comunicazione){
         ListaComunicazioni.push(Comunicazione);
@@ -33,3 +28,5 @@ var BachecaAnnunci = {
 
 
 };
+
+module.exports = BachecaAnnunci

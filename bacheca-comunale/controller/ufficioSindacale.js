@@ -1,42 +1,16 @@
-class listaEventiDaApprovare {
+  const comunicazone =  require('../models/Comunicazione')
   
-    
-    constructor() 
-    {
-      
-    }
+  var gestoreComunicazione = {
+  
+    "date": date = new Date(),
    
-    checkEvent()
+    createComunication(UfficioSindacale, oggetto,importanza,messagio)
     {
-
-    }
-    
-    deleteEvent()
-    {
-        
-    }
-
-    getEvent()
-    {
-        
+      var comunication = new comunicazone(UfficioSindacale,date.toUTCString(),oggetto,importanza,messagio);
+      return comunication;
     }
 
     
   }
 
-
-  class gestoreComunicazione {
-  
-    
-    constructor() 
-    {
-      
-    }
-   
-    createComunication()
-    {
-
-    }
-
-    
-  }
+  module.exports = gestoreComunicazione

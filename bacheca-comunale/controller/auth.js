@@ -24,10 +24,22 @@ var auth = {
         }
     },
 
-    register(username , password,userType)
+    register(username, password,userType)
     {
-        var usr = new 
-        listaUtenti.push()
+        var usr
+
+        switch(userType) {
+            case 'UfficioSindacale':
+                usr = new UfficioSindacale(new Utente(username,'',password))
+              break;
+            case 'Cittadino':
+                    usr= new Cittadino(new Utente(username,'',password))
+              break;
+              case 'Azienda':
+                    usr = new Azienda(new Utente(username,'',password),'nome da inserire')
+          }
+          
+        return usr
     }
     
 }

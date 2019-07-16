@@ -13,12 +13,7 @@ class Azienda {
         this.ruolo = 'azienda'
     }
 
-    compilaOffertaLavoro(){
-        var txtInput = document.getElementById("txtInput"). value;
-        txtInput.onkeypress = function(e) {
-	        if (e.target.value.length >= 200) e.preventDefault();
-        }
-    }
+   
 
     
 

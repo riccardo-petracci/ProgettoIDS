@@ -10,7 +10,7 @@ const session = require('express-session')
 const gestoreCittadino = require('../controller/cittadino').gestoreCittadino
 const bacheca = require('../models/BachecaAnnunci')
 const eventiDaApprovare = require('../models/ListaEventiDaApprovare')
-
+const segnalazioni = require('../models/listaSegnalazioni')
 
 route.use(bodyParser.urlencoded({extended:true}))
 route.use(cookieParser('super'))
@@ -27,8 +27,12 @@ route.use(session({
 route.get('/cittadino',function(req,res){
     
     var usr = req.session.user
+    var segn = JSON.stringify(segnalazioni.listaSegnalazioni)
+    var comunicazione = JSON.stringify(bacheca.Comunicazini)
     req.session.user=usr
-    res.render(path.resolve('./view')+'/cittadino.ejs',{utente:usr.nome})
+
+
+    res.render(path.resolve('./view')+'/cittadino.ejs',{utente:usr.nome,segnal:segn,comm:comunicazione})
     
 
 })
@@ -52,7 +56,8 @@ route.post('/cittadino/segnalazzione',(req,res) =>
     req.session.user=usr
 
     var segnalzione = gestoreCittadino.compilaSegnalazione(usr,tipoSegnalazione,durata,soccorsi,soccorsiGiunti)
-    BachecaAnnunci.AggiungiSegnalazione(segnalzione)
+    segnalazioni.AggiungiSegnalazione(segnalzione)
+
 })
 
 route.post('/cittadino/evento',(req,res) =>
@@ -68,3 +73,4 @@ route.post('/cittadino/evento',(req,res) =>
     eventiDaApprovare.lista.push(evento)
 })
 module.exports = route;
+

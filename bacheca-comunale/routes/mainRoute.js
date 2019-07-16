@@ -10,12 +10,15 @@ const DB = require('../models/listaUtenti')
 const auth = require('../controller/auth')
 const cittadino = require('./cittadinoRoute')
 const azienda = require('./aziendsRoute')
-
+const ufficioSindacale = require('./ufficioSindacaleRoute')
+const segnalazioni = require('../models/listaSegnalazioni')
+const bacheca = require('../models/BachecaAnnunci')
 
 route.use(cookieParser())
 route.use(bodyParser.urlencoded({extended:true}))
 route.use(cittadino)
 route.use(azienda)
+route.use(ufficioSindacale)
 
 route.use(session({
     
@@ -25,7 +28,13 @@ route.use(session({
     saveUninitialized:true
 }))
 
-route.get('/', (req,res) => {res.render(path.resolve('./view')+'/index.ejs')});
+route.get('/', (req,res) => {
+    
+    var se = JSON.stringify(segnalazioni.listaSegnalazioni)
+    var comunicazioni = JSON.stringify(bacheca.Comunicazini)
+    res.render(path.resolve('./view')+'/index.ejs',{segn:se,comm:comunicazioni})
+});
+
 route.get('/about', (req,res) =>{res.render(path.resolve('./view')+'/about.ejs')});
 route.get('/login', (req,res) =>{res.render(path.resolve('./view')+'/login.ejs')});
 route.get('/login/forgotpassword', (req,res) =>{res.render(path.resolve('./view')+'/forgotpassword.ejs')});
@@ -34,9 +43,10 @@ route.get('/login/forgotpassword', (req,res) =>{res.render(path.resolve('./view'
 
 
 route.post('/signed',(req,res) => {
-    var user = auth.register(req.body.uname,req.body.psw)
-    DB.push(user)
-    //res.render(path.resolve('./view')+'/cittadino.ejs',{utente:req.body.uname})    
+    var user = auth.register(req.body.uname,req.body.psw,req.body.userType)
+    console.log(user)
+    DB.listaUtenti.push(user)
+      
 
 })
 
@@ -52,6 +62,7 @@ route.post('/logged',(req,res) => {
 
         switch(userAuth.ruolo) {
             case 'ufficioSindacale':
+                
                     res.redirect('/ufficiosindacale')
               break;
             case 'cittadino':
@@ -65,7 +76,6 @@ route.post('/logged',(req,res) => {
        
     }
     
-
 })
 
 
