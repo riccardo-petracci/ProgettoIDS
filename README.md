@@ -87,3 +87,42 @@
 		-PartecipazioneEvento
 		-RispondiOfferta
 		-VistaBachecaAnnunci
+		
+		
+
+4° ITERAZIONE 24/06/19 - 17/07/19
+
+	-RIMOZIONE ATTORI
+		-SuperUser
+		-Moderatore
+
+	-IDENTIFICAZIONE ULTIMI CASI D'USO
+		-PartecipazioneEvento
+		-RimozioneCommento(Amministratore)
+		-FissaIncontro
+		
+	-IDENTIFICAZIONE DIAGRAMMI DI SEQUENZA
+		-FissaIncontro
+		
+	-IDENTIFICAZIONE CLASSI DI ANALISI
+		-GestoreCittadino
+		-GestoreAzienda
+		-GestoreEvento
+		-GestoreCittadino
+		-GestoreComunicazione
+		-GestoreNotifiche
+		-ComunicazioneUI
+		-RispondiOffertaUI
+		-CittadinoUI
+		-SegnalazioneUI
+		-UfficioSindacaleUI
+		-ComunicazioneUI
+		-Notifica
+		-NotificaReport
+		-NotificaCreaEvento
+		-NotificaFissaIncontro
+		-ListaEventiDaApprovare
+		
+	
+		
+
