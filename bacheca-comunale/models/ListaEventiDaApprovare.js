@@ -5,11 +5,11 @@ const Cittadino = require('./Cittadino');
 
 var listaEventiDaApprovare = {
 
-"lista":ListaEventiDaApprovare = [],
+"ListaEventiDaApprovare":ListaEventiDaApprovare = [ev1 = new Evento('','22-05-2020','inaugurazione bacheca','','22-05-2019')],
 
 
 
-    isEmpty(ListaEventiDaApprovare){
+    isEmpty(){
         if(ListaEventiDaApprovare.length == 0){
             return true;
         }else{ 
@@ -18,18 +18,18 @@ var listaEventiDaApprovare = {
     },
 
 
-    getEvent(eventoId, ListaEventiDaApprovare){
-        for (var i=0; i < ListaEventiDaApprovare.length; i++) {
-            if (ListaEventiDaApprovare[i].eventoId === eventoId) {
+    getEvent(Id){
+        for (var i=0; i <=ListaEventiDaApprovare.length; i++) {
+            if (ListaEventiDaApprovare[i].eventoId == Id) {
                 return ListaEventiDaApprovare[i];
             }
         }
     },
 
 
-    deleteEvent(eventoId, ListaEventiDaApprovare){
+    deleteEvent(eventoId){
         for (var i=0; i < ListaEventiDaApprovare.length; i++) {
-            if (ListaEventiDaApprovare[i].eventoId === eventoId) {
+            if (ListaEventiDaApprovare[i].eventoId == eventoId) {
                 ListaEventiDaApprovare.splice(i);
             }
         }

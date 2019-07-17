@@ -13,12 +13,6 @@ class UfficioSindacale  {
         this.ruolo = 'ufficioSindacale'
     }
 
-
-
-    approvaEvento(evento){
-        evento.flagApprovazione = true; 
-    }
-
     
 
 

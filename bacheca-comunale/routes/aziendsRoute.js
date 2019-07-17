@@ -33,6 +33,16 @@ route.get('/azienda',(req,res)=>{
 })
 
 
+route.get('/azienda/bacheca',function(req,res){
+
+    var eventi = JSON.stringify(bacheca.Eventi)
+    var offerte = JSON.stringify(bacheca.OfferteLavoro)
+    var annunci = JSON.stringify(bacheca.AnnunciPromozione)
+
+    res.render(path.resolve('./view')+'/bacheca.ejs',{ann:annunci,off:offerte,evv:eventi})
+    
+ })
+
 
 route.get('/azienda/offerte',(req,res)=>{
     

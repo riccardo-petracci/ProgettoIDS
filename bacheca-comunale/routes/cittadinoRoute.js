@@ -38,12 +38,14 @@ route.get('/cittadino',function(req,res){
 })
 
 
-// route.get('/cittadino/bacheca',function(req,res){
+route.get('/cittadino/bacheca',function(req,res){
     
-//     res.render(path.resolve('./view')+'/bacheca.ejs')
-    
+    var eventi = JSON.stringify(bacheca.Eventi)
+    var offerte = JSON.stringify(bacheca.OfferteLavoro)
+    var annunci = JSON.stringify(bacheca.AnnunciPromozione)
 
-// })
+    res.render(path.resolve('./view')+'/bacheca.ejs',{ann:annunci,off:offerte,evv:eventi})
+ })
 
 route.post('/cittadino/segnalazzione',(req,res) =>
 {

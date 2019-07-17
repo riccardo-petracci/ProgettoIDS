@@ -568,148 +568,42 @@
         </style>
 
 
+    <head>
+        <title>approvazione Eventi</title>
+        <body>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a class="active" href="/ufficioSindacale" style="text-align: center">Homepage Ufficio Sindacale</a></li>
+            </ul>
+
+            <div class="card mb-3">
+                <div class="card-body">
+                 <div class="card">
+                 <div class="card-body table-responsive">
+                     <table class="table table-hover">
+                         <tbody>
+                           <!-- eventi da approvare dal sindaco -->
 
 
+                                  <form name="eventi" method="POST" action="/ufficiosindacale/approva-evento">
+                                    
+                                    <td><label>Eventi: <%=evv%></td>
+                                    ID
+                                      <input type="number" placeholder="Inserire ID evento" name="identificatore" required>
+                                    </label>
+                                    
+                                    <input type="reset"  name = "elimina"   value="Elimina l'evento">
+                                    <input type="submit" name = "approva" value="Approva l'evento">
+                                  </form>
+                                  
+                         </tbody>
+                     </table>
+                 </div>
+                </div>
+              </div>
+            </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   <head>
-           <title>Gestione Offerte di Lavoro</title>
-      <body>
-        <ul>
-            <li><a href="/index">Home</a></li>
-            <li><a href="/azienda">Homepage Azienda</a></li>
-            <li style="float:right"><a href="/about">About</a></li>
-            <li><a href="/azienda/bacheca">Bacheca Annunci</a></li>
-            <li><a class="active" href="/azienda/offerte">Sezione Offerte Lavoro</a></li>
-        </ul>
-
-        
-
-<button onclick="document.getElementById('id00').style.display='block'" style="width:auto;">Nuova Offerta di Lavoro</button>
-
-<div id="id00" class="modal">
-  <span onclick="document.getElementById('id00').style.display='none'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content" action="/azienda/offerte" method="POST">
-    <div class="container">
-      <form>
-        <h2>Compila una nuova offerta di lavoro</h2>
-        <table id="oggetto" border="0" cellspacing="2" cellpadding="2">
-        <tr>
-        </tr>
-        <tr>
-        <td>Email:</td>
-        <td><input type="text" size="31" name="email" maxlength="30"></td>
-        </tr>
-        <tr>
-        <tr> 
-        <td> Lavoratore Ricercato </td>
-        <td><input type="text" size="31" name="tipoLavoratore" maxlength="30"></td>
-        </tr>
-        <tr> 
-                <td> Periodo</td>
-                <td> <select name="a"> 
-                <option value"Selezione">Selezione</option>
-                <option value="1 mese"> 1 mese </option>
-                <option value="3 mesi "> 3 mesi </option>
-                <option value="6 mesi"> 6 mesi </option>
-                <option value="1 anno"> 1 anno </option>
-                <option value="2 anni"> 2 anni </option>
-                <option value="prova + periodo sconosciuto"> prova + periodo sconosciuto</option>
-                </select> </td>
-                </tr>
-
-
-
-        <td>Messaggio:</td>
-        <td><textarea rows="7" cols="24" name="messaggio"></textarea></td>
-        </tr>
-        <tr>
-        <td></td>
-        <td> <input type="reset" value="Reset">
-        </td>
-        </tr>
-        </table>
-        </form>
-
-      <div class="clearfix">
-        <button type="button" onclick="document.getElementById('id00').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit" class="signupbtn">Crea Offerta di Lavoro</button>
-      </div>
-    </div>
-  </form>
-</div>
-
-
-
-<div class="main-content">
-    <div class="container-fluid">
-      <div class="card mb-3">
-        <div class="card-body">
-         <div class="card">
-         <div class="card-header card-header-primary">
-             <h3 class="card-title " *ngIf="models?.results.length !== 0">Lista Offerte di lavoro pubblicate</h3>
-             <h3 class="card-title " *ngIf="models?.results.length === 0">Non ci sono offerte di lavoro pubblicate. Crearne una nuova.</h3>
-         </div>
-         <div class="card-body table-responsive">
-             <table class="table table-hover">
-                 <tbody>
-                     <tr *ngFor="let model of models?.results">
-                     <td>
-                            <%=off%>
-                     </td>
-                     <td>
-                        <a class="nav-link active" href="['offertaLavoro/', offertaLavoro.offertaLavoro_id]">Dettagli</a>
-                         <!-- <a class="nav-link" [routerLink]="['offertaLavoro/', offertaLavoro.offertaLavoro_id]" routerLinkActive="active" matTooltip="Validate Model">
-                             <mat-icon>forward</mat-icon> -->
-                         </a>
-                     </td>
-                     </tr>
-                 </tbody>
-             </table>
-         </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-<script>
-
-// Get the modal
-var modal1 = document.getElementById('id00');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-            if (event.target == modal1) {
-                modal1.style.display = "none";
-            }
-        }
-
-//se vogliamo far aprire in automatico la creazione offerta di lavoro in casi non ci siano offerte pubblicate
-wiondow.onload=function(){
-        
-}        
-</script>       
-      </body>
-   </head>
+        </body>
+    </head>
 </html>

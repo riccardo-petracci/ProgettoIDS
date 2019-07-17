@@ -603,21 +603,7 @@
                 <div class="card-body "> <!--table-responsive / scroll-->
                   <table class="table table-hover">
                       <thead class="text-info">
-                          <th>Nome Azienda</th>
-                          <th>Lavoratore Ricercato</th>
-                          <th>Periodo</th>
-                          <th>Messaggio</th>
-                      </thead>
-                      <tbody>
-                          <tr *ngFor="let model of mostDownloadedModels?.results">
-                              <td *ngIf="isAdmin">{{model.model_id}}</td>
-                              <td style="max-width:250px; white-space:nowrap;overflow-x: scroll;" >{{model.name}}</td>                                                                     
-                              <td >{{model.number_of_downloads}}</td>
-                              <td>
-                                    <a class="nav-link" [routerLink]="['modelDetails/', model.model_id]" routerLinkActive="active" matTooltip="Details">
-                                      <mat-icon>forward</mat-icon>
-                                </a>
-                          </tr>
+                          <%=off%>
                       </tbody>
                   </table>
               </div>
@@ -631,18 +617,7 @@
                 <div class="card-body "> <!-- table-responsive / scroll -->
                     <table class="table table-hover">
                         <thead class="text-danger">
-                            <th>Nome Azienda</th>
-                            <th>Nome Promozione</th>
-                            <th>Messaggio Azienda</th>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let model of latestModels?.results">
-                                <!-- Aggiunta style per permettere lo scroll, per riportare tutto allo stato originale eliminare lo style -->
-                                <td *ngIf="isAdmin" style="max-width:100px;">{{model.model_id}}</td> 
-                                <td style="max-width:170px; white-space:nowrap;overflow-x: scroll" >{{model.name}}</td>
-                                <td style="max-width: 100px;" >{{model.upload_date}}</td> <!-- con max-width la data va su due righe senza rimane su una ma tutto più compatto-->
-                                  </a>
-                            </tr>
+                           <%=ann%>
                         </tbody>
                     </table>
                 </div>
@@ -656,20 +631,7 @@
                 <div class="card-body "> <!--table-responsive / scroll-->
                   <table class="table table-hover">
                       <thead class="text-info">
-                          <th>Nome Evento</th>
-                          <th>Numero Partecipanti</th>
-                          <th>Dettagli</th>
-                      </thead>
-                      <tbody>
-                          <tr *ngFor="let model of mostDownloadedModels?.results">
-                              <td *ngIf="isAdmin">{{model.model_id}}</td>
-                              <td style="max-width:250px; white-space:nowrap;overflow-x: scroll;" >{{model.name}}</td>                                                                     
-                              <td >{{model.number_of_downloads}}</td>
-                              <td>
-                                    <a class="nav-link" [routerLink]="['modelDetails/', model.model_id]" routerLinkActive="active" matTooltip="Details">
-                                      <mat-icon>forward</mat-icon>
-                                </a>
-                          </tr>
+                        <%=evv%>
                       </tbody>
                   </table>
               </div>

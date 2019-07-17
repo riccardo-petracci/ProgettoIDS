@@ -593,9 +593,9 @@
 <section>
   <nav>
     <ul>
-      <li><a href="/bacheca">Bacheca Annunci</a></li>
+      <li><a href="/ufficiosindacale/bacheca">Bacheca Annunci</a></li>
       <li><a button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"></button>Nuova Comunicazione</a></li>
-      <li><a button href="/approvazioneEventi"></button>Approvazione Eventi</a></li>
+      <li><a button href="/ufficiosindacale/approva-evento"></button>Approvazione Eventi</a></li>
     </ul>
     <div id="id01" class="modal">
                     <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -660,15 +660,13 @@
                                  <!-- comunicazioni del sindaco -->
                                   <tr *ngFor="let segnalazioni?.results">
                                       <td>
-                                          <h5>{{comunicazione?.tipoSegnalazione}}</h5>
-                                          <p>Segnalazione di<b>{{segnalazione?.nome_cittadino}}</b><b>{{segnalazione?.presenza}}</b><b>{{segnalazione?.provvedimenti.durata}}</b><b>{{segnalazione?.provvedimenti.soccorsi}}</b></p>
+                                          <%=comm%>
                                       </td>
                                       </tr>
                                  <!-- segnalazioni cittadini -->
                                    <tr *ngFor="let segnalazioni?.results">
                                    <td>
-                                       <h5>{{segnalazione?.tipoSegnalazione}}</h5>
-                                       <p>Segnalazione di<b>{{segnalazione?.nome_cittadino}}</b><b>{{segnalazione?.presenza}}</b><b>{{segnalazione?.provvedimenti.durata}}</b><b>{{segnalazione?.provvedimenti.soccorsi}}</b></p>
+                                       <%=segn%>
                                    </td>
                                    </tr>
                                </tbody>
